@@ -1,0 +1,145 @@
+/* ----------------------------- */
+/* Estilos base y generales      */
+/* ----------------------------- */
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  background-color: #0f1923; /* Fondo oscuro estilo Valorant */
+  color: #eaeaea;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ----------------------------- */
+/* Header y footer               */
+/* ----------------------------- */
+
+header, footer {
+  background-color: #ff4655; /* Rojo característico de Valorant */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 3px solid #1f1f1f;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+
+/* ----------------------------- */
+/* NAV con FLEXBOX               */
+/* ----------------------------- */
+
+nav ul {
+  display: flex;               /* Activa flexbox */
+  justify-content: center;     /* Centra horizontalmente */
+  align-items: center;         /* Alinea verticalmente */
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 15px;              /* Espacio entre enlaces */
+}
+
+nav ul li a {
+  color: #eaeaea;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff4655;
+}
+
+/* ----------------------------- */
+/* Contenido principal            */
+/* ----------------------------- */
+
+/* ----------------------------- */
+/* MAIN con GRID                 */
+/* ----------------------------- */
+
+main {
+  display: grid;                             /* Activa grid */
+  grid-template-columns: 2fr 1fr;            /* Dos columnas: principal + aside */
+  gap: 20px;                                 /* Espacio entre ellas */
+  width: 90%;
+  margin: 20px auto;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Diseño adaptable (Responsive Design) */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;              /* Una sola columna en móvil */
+  }
+}
+article {
+  margin-bottom: 20px;
+}
+
+aside {
+  background-color: #252f3f;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* ----------------------------- */
+/* Botón modo oscuro              */
+/* ----------------------------- */
+
+#modo-oscuro-btn {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#modo-oscuro-btn:hover {
+  background-color: #ff4655;
+}
+
+/* ----------------------------- */
+/* Modo oscuro (activado por JS) */
+/* ----------------------------- */
+
+body.dark-mode {
+  background-color: #111;
+  color: #f4f4f4;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #0d0d0d;
+}
+
+body.dark-mode nav {
+  background-color: #181818;
+}
+
+/* ----------------------------- */
+/* Responsive Design (Desktop / Tablet) */
+/* ----------------------------- */
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 3fr 1fr; /* Contenido principal más ancho que la barra lateral */
+    width: 80%;                      /* Ajusta el ancho general del main */
+  }
+}
+
+
+
