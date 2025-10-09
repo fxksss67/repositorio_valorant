@@ -1,33 +1,52 @@
 /* ----------------------------- */
 /* Estilos base y generales      */
 /* ----------------------------- */
-
 body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
-  background-color: #0f1923; /* Fondo oscuro estilo Valorant */
   color: #eaeaea;
   transition: background-color 0.3s, color 0.3s;
+
+  /* Fondo con imagen + degradado */
+  background: 
+  
+    url('https://wallpapercg.com/media/ts_orig/25356.webp') no-repeat center center fixed;
+     background-size: cover;
 }
+
+body.dark-mode {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.7),  /* Degradado más oscuro */
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('https://www.gamewallpapers.com/img_script/wallpaper_dir/img.php?src=wallpaper_valorant_02_2560x1440.jpg&height=450&width=800&fill-to-fit&sharpen') no-repeat center center fixed;
+
+  background-size: cover;
+  color: #f4f4f4;
+}
+
+
 
 /* ----------------------------- */
 /* Header y footer               */
 /* ----------------------------- */
 
 header, footer {
-  background-color: #ff4655; /* Rojo característico de Valorant */
+  background: linear-gradient(90deg, #e65d69, #eb0518);
   color: white;
   text-align: center;
-  padding: 20px;
-  border-bottom: 3px solid #1f1f1f;
+  padding: 25px;
+  border-bottom: 3px solid #ffffff;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2rem;
-  letter-spacing: 1px;
+ margin: 0;
+  font-size: 4rem;
+  letter-spacing: 8px;
+  color: #ffffff !important;; /* Blanco para que se vea sobre el banner rojo */
+  font-family: 'Orbitron', sans-serif; /* Nueva fuente */
 }
-
 
 /* ----------------------------- */
 /* NAV con FLEXBOX               */
@@ -46,29 +65,26 @@ nav li {
   margin: 0 15px;              /* Espacio entre enlaces */
 }
 
-nav ul li a {
-  color: #eaeaea;
+nav li a {
   text-decoration: none;
+  color: white;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: transform 0.3s, color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #ff4655;
+nav li a:hover {
+  color: #ff7a85;
+  transform: scale(1.1);
 }
 
 /* ----------------------------- */
 /* Contenido principal            */
 /* ----------------------------- */
 
-/* ----------------------------- */
-/* MAIN con GRID                 */
-/* ----------------------------- */
-
 main {
-  display: grid;                             /* Activa grid */
-  grid-template-columns: 2fr 1fr;            /* Dos columnas: principal + aside */
-  gap: 20px;                                 /* Espacio entre ellas */
+  display: grid;                 /* Activa grid */
+  grid-template-columns: 2fr 1fr;/* Dos columnas: principal + aside */
+  gap: 20px;                     /* Espacio entre ellas */
   width: 90%;
   margin: 20px auto;
   background-color: #1f1f1f;
@@ -80,9 +96,10 @@ main {
 /* Diseño adaptable (Responsive Design) */
 @media (max-width: 768px) {
   main {
-    grid-template-columns: 1fr;              /* Una sola columna en móvil */
+    grid-template-columns: 1fr;   /* Una sola columna en móvil */
   }
 }
+
 article {
   margin-bottom: 20px;
 }
@@ -105,11 +122,12 @@ aside {
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #modo-oscuro-btn:hover {
   background-color: #ff4655;
+  transform: scale(1.05);
 }
 
 /* ----------------------------- */
@@ -140,6 +158,63 @@ body.dark-mode nav {
     width: 80%;                      /* Ajusta el ancho general del main */
   }
 }
+article {
+  background-color: #2c2c2c;           /* Fondo oscuro para el contenido */
+  color: #f4f4f4;                      /* Texto claro */
+  padding: 20px;
+  border-radius: 12px;                 /* Bordes redondeados */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra sutil */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
+article:hover {
+  transform: translateY(-5px);         /* Se eleva ligeramente al pasar el mouse */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra más marcada */
+}
 
+aside {
+  background-color: #252f3f;            /* Fondo oscuro distinto al main */
+  color: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+aside:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+aside h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #ff4655;                       /* Color destacado para títulos */
+}
+
+aside p {
+  margin: 10px 0;
+  cursor: default;
+  transition: color 0.3s;
+}
+
+aside p:hover {
+  color: #ff7a85;                        /* Cambio de color al pasar el mouse */
+  cursor: pointer;
+}
+
+/* Contenedor de lista de usuarios */
+#user-list p {
+  margin: 8px 0;
+  padding: 5px 10px;
+  background-color: #1f1f1f;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#user-list p:hover {
+  background-color: #ff4655;
+  transform: scale(1.05);
+  color: white;
+}
 
