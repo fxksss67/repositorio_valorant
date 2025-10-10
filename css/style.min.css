@@ -1,114 +1,57 @@
+
 /* ----------------------------- */
 /* Estilos base y generales      */
 /* ----------------------------- */
+
 body {
-  font-family: 'Poppins', Arial, sans-serif;
+  height: 200%;
   margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
   color: #eaeaea;
   transition: background-color 0.3s, color 0.3s;
-
-  /* Fondo con imagen + degradado */
-  background: 
-  
-    url('https://wallpapercg.com/media/ts_orig/25356.webp') no-repeat center center fixed;
-     background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+  flex-direction: column;
 }
 
-body.dark-mode {
+/* Fondo claro (por defecto) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background:
     linear-gradient(
-      rgba(0, 0, 0, 0.7),  /* Degradado más oscuro */
+      rgba(15, 25, 35, 0.6),
+      rgba(15, 25, 35, 0.6)
+    ),
+    url('https://wallpapercg.com/media/ts_orig/25356.webp') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Fondo oscuro (segunda capa, invisible al inicio) */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.7)
     ),
     url('https://www.gamewallpapers.com/img_script/wallpaper_dir/img.php?src=wallpaper_valorant_02_2560x1440.jpg&height=450&width=800&fill-to-fit&sharpen') no-repeat center center fixed;
-
   background-size: cover;
-  color: #f4f4f4;
-}
-
-
-
-/* ----------------------------- */
-/* Header y footer               */
-/* ----------------------------- */
-
-header, footer {
-  background: linear-gradient(90deg, #e65d69, #eb0518);
-  color: white;
-  text-align: center;
-  padding: 25px;
-  border-bottom: 3px solid #ffffff;
-}
-
-header h1 {
- margin: 0;
-  font-size: 4rem;
-  letter-spacing: 8px;
-  color: #ffffff !important;; /* Blanco para que se vea sobre el banner rojo */
-  font-family: 'Orbitron', sans-serif; /* Nueva fuente */
-}
-
-/* ----------------------------- */
-/* NAV con FLEXBOX               */
-/* ----------------------------- */
-
-nav ul {
-  display: flex;               /* Activa flexbox */
-  justify-content: center;     /* Centra horizontalmente */
-  align-items: center;         /* Alinea verticalmente */
-  padding: 0;
-  list-style: none;
-  margin: 0;
-}
-
-nav li {
-  margin: 0 15px;              /* Espacio entre enlaces */
-}
-
-nav li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: transform 0.3s, color 0.3s;
-}
-
-nav li a:hover {
-  color: #ff7a85;
-  transform: scale(1.1);
-}
-
-/* ----------------------------- */
-/* Contenido principal            */
-/* ----------------------------- */
-
-main {
-  display: grid;                 /* Activa grid */
-  grid-template-columns: 2fr 1fr;/* Dos columnas: principal + aside */
-  gap: 20px;                     /* Espacio entre ellas */
-  width: 90%;
-  margin: 20px auto;
-  background-color: #1f1f1f;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Diseño adaptable (Responsive Design) */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;   /* Una sola columna en móvil */
-  }
-}
-
-article {
-  margin-bottom: 20px;
-}
-
-aside {
-  background-color: #252f3f;
-  padding: 15px;
-  border-radius: 8px;
-  margin-top: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 /* ----------------------------- */
@@ -130,50 +73,150 @@ aside {
   transform: scale(1.05);
 }
 
-/* ----------------------------- */
-/* Modo oscuro (activado por JS) */
-/* ----------------------------- */
-
-body.dark-mode {
-  background-color: #111;
-  color: #f4f4f4;
+/* Activar transición al modo oscuro */
+body.dark-mode::before {
+  opacity: 0;
 }
 
-body.dark-mode header,
-body.dark-mode footer {
-  background-color: #0d0d0d;
+body.dark-mode::after {
+  opacity: 1;
 }
 
-body.dark-mode nav {
-  background-color: #181818;
+
+
+
+/* --- HEADER y FOOTER --- */
+header, footer {
+  position: relative;       /* Necesario para la pseudo-capa */
+  color: white;
+  text-align: center;
+  padding: 25px;
+  overflow: hidden;
+}
+
+/* Pseudo-capa para degradado */
+header::before,
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #e65d69, #eb0518);
+  z-index: -1;
+  transition: background 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Bordes */
+header {
+  border-bottom: 3px solid #ffffff;
+}
+
+footer {
+  border-top: 3px solid #ffffff;
+}
+
+/* Modo oscuro */
+body.dark-mode header::before,
+body.dark-mode footer::before {
+  background: linear-gradient(90deg, #58080c, #470709);
+}
+
+
+
+
+/* --- TITULAR DEL HEADER --- */
+header h1 {
+  margin: 0;
+  font-size: 4rem;
+  letter-spacing: 8px;
+  color: #ffffff !important;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+
+/* ----------------------------- */
+/* NAV con FLEXBOX               */
+/* ----------------------------- */
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s, color 0.3s;
+}
+
+nav li a:hover {
+  color: #ff7a85;
+  transform: scale(1.1);
 }
 
 /* ----------------------------- */
-/* Responsive Design (Desktop / Tablet) */
+/* Contenido principal            */
 /* ----------------------------- */
 
-@media (min-width: 768px) {
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+  background-color: rgba(31, 31, 31, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.5s;
+}
+
+
+
+/* Diseño adaptable (Responsive Design) */
+@media (max-width: 768px) {
   main {
-    grid-template-columns: 3fr 1fr; /* Contenido principal más ancho que la barra lateral */
-    width: 80%;                      /* Ajusta el ancho general del main */
+    grid-template-columns: 1fr;
   }
 }
+
 article {
-  background-color: #2c2c2c;           /* Fondo oscuro para el contenido */
-  color: #f4f4f4;                      /* Texto claro */
+  margin-bottom: 20px;
+}
+
+/* ----------------------------- */
+/* Tarjetas y aside estilizados */
+/* ----------------------------- */
+
+article {
+  background-color: #2c2c2c;
+  color: #f4f4f4;
   padding: 20px;
-  border-radius: 12px;                 /* Bordes redondeados */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra sutil */
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 article:hover {
-  transform: translateY(-5px);         /* Se eleva ligeramente al pasar el mouse */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra más marcada */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 aside {
-  background-color: #252f3f;            /* Fondo oscuro distinto al main */
+  background-color: #252f3f;
   color: #f4f4f4;
   padding: 20px;
   border-radius: 12px;
@@ -189,7 +232,7 @@ aside:hover {
 aside h3 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #ff4655;                       /* Color destacado para títulos */
+  color: #ff4655;
 }
 
 aside p {
@@ -199,7 +242,7 @@ aside p {
 }
 
 aside p:hover {
-  color: #ff7a85;                        /* Cambio de color al pasar el mouse */
+  color: #ff7a85;
   cursor: pointer;
 }
 
@@ -217,4 +260,18 @@ aside p:hover {
   transform: scale(1.05);
   color: white;
 }
+
+
+
+/* ----------------------------- */
+/* Responsive Design (Desktop / Tablet) */
+/* ----------------------------- */
+
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 3fr 1fr;
+    width: 80%;
+  }
+}
+
 
