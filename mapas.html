@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valorant Maps | Info Hub</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <img src="https://i.imgur.com/2fjVdvI.png" alt="Valorant Logo" style="height:60px;">
+    </div>
+    <h1>Valorant Maps</h1>
+    <button id="modo-oscuro-btn">🌙 Dark Mode</button>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="agentes.html">🧠 Agents</a></li>
+      <li><a href="mapas.html" class="active">🗺️ Maps</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <article>
+      <h2>Explore the Battlefields of Valorant</h2>
+      <p>Each map in Valorant offers a unique strategic layout, creative design, and multiple approaches for attackers and defenders. Below are some of the most iconic battlegrounds.</p>
+
+      <section class="map-card">
+        <img src="https://static.valorantzone.gg/news/2023/07/valorant-map-bind-1920x1080.jpg" alt="Bind Map">
+        <div class="map-info">
+          <h3>Bind</h3>
+          <p>Located in Rabat, Morocco, Bind has no middle lane. Instead, it features two teleporters that enable fast rotations and surprise attacks.</p>
+        </div>
+      </section>
+
+      <section class="map-card">
+        <img src="https://static.valorantzone.gg/news/2023/07/valorant-map-ascent-1920x1080.jpg" alt="Ascent Map">
+        <div class="map-info">
+          <h3>Ascent</h3>
+          <p>Set in Venice, Italy, Ascent is an open map centered around a large courtyard. Mid control is crucial for both teams to dominate the round.</p>
+        </div>
+      </section>
+
+      <section class="map-card">
+        <img src="https://static.valorantzone.gg/news/2023/07/valorant-map-sunset-1920x1080.jpg" alt="Sunset Map">
+        <div class="map-info">
+          <h3>Sunset</h3>
+          <p>Sunset, located in Los Angeles, offers a balanced mix of long sightlines and close-quarter combat, with a traditional three-lane layout.</p>
+        </div>
+      </section>
+
+      <section class="map-card">
+        <img src="https://static.valorantzone.gg/news/2023/07/valorant-map-lotus-1920x1080.jpg" alt="Lotus Map">
+        <div class="map-info">
+          <h3>Lotus</h3>
+          <p>Set among ancient ruins in India, Lotus introduces rotating doors and multiple routes for unpredictable gameplay.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Valorant Info Hub — Fan-made site, not affiliated with Riot Games.</p>
+  </footer>
+
+  <!-- JS (modo oscuro reutilizable) -->
+  <script>
+    const btnModoOscuro = document.getElementById('modo-oscuro-btn');
+    btnModoOscuro.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      btnModoOscuro.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>
