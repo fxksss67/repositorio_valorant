@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abyss — Valorant Map | Info Hub</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1>Abyss</h1>
+    <button id="modo-oscuro-btn">🌙 Dark Mode</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="../mapas.html">🗺️ All Maps</a></li>
+    </ul>
+  </nav>
+
+  <main class="map-detail">
+    
+    <div class="map-images">
+      <div>
+        <h2>Full Map</h2>
+        <img src="assets/img/Mapas/Abyss/Loading_Screen_Abyss.webp" alt="Abyss Full Map">
+      </div>
+
+     <h3> Abyss is the first map in VALORANT to have no outer boundaries and a death drop in Mid, making it possible in these areas for players to fall off the map to their death. Some parts of the map can only be accessed by jumping across these drops; the Danger and Secret positions are narrow ledges on the map's outer boundaries that are used as jump shortcuts.</h3>
+    
+      <div>
+        <h2>Mini Map</h2>
+        <img src="assets/img/Mapas/Abyss/Abyss_minimap.webp" alt="Abyss Mini Map">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Valorant Info Hub — Fan-made site.</p>
+  </footer>
+
+  <script>
+    const btnModoOscuro = document.getElementById('modo-oscuro-btn');
+    btnModoOscuro.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      btnModoOscuro.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>

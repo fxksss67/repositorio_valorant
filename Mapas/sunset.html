@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunset — Valorant Map | Info Hub</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1>Sunset</h1>
+    <button id="modo-oscuro-btn">🌙 Dark Mode</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="../mapas.html">🗺️ All Maps</a></li>
+    </ul>
+  </nav>
+
+  <main class="map-detail">
+    
+    <div class="map-images">
+      <div>
+        <h2>Full Map</h2>
+        <img src="assets/img/Mapas/Sunset/Loading_Screen_Sunset.webp" alt="Sunset Full Map">
+      </div>
+
+     <h3>Sunset is one of VALORANT's more traditional maps with two sites and three lanes. Its one additional feature is a mechanical door found between B Market and Mid Courtyard. Players can use a switch on the Market side of the door to close or open it.</h3>
+    
+      <div>
+        <h2>Mini Map</h2>
+        <img src="assets/img/Mapas/Sunset/Sunset_minimap.webp" alt="Sunset Mini Map">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Valorant Info Hub — Fan-made site.</p>
+  </footer>
+
+  <script>
+    const btnModoOscuro = document.getElementById('modo-oscuro-btn');
+    btnModoOscuro.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      btnModoOscuro.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>

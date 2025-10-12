@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bind — Valorant Map | Info Hub</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1>Bind</h1>
+    <button id="modo-oscuro-btn">🌙 Dark Mode</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="../mapas.html">🗺️ All Maps</a></li>
+    </ul>
+  </nav>
+
+  <main class="map-detail">
+    
+    <div class="map-images">
+      <div>
+        <h2>Full Map</h2>
+        <img src="assets/img/Mapas/Bind/Loading_Screen_Bind.webp" alt="Bind Full Map">
+      </div>
+
+     <h3> Bind is a desert map set in Morocco. Bind's unique feature is that it doesn't contain a mid section, instead having two one-way teleporters. One takes players from A Short to B Short and the other takes players from B Long to A Lobby.</h3>
+    
+      <div>
+        <h2>Mini Map</h2>
+        <img src="assets/img/Mapas/Bind/Bind_minimap.webp" alt="Bind Mini Map">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Valorant Info Hub — Fan-made site.</p>
+  </footer>
+
+  <script>
+    const btnModoOscuro = document.getElementById('modo-oscuro-btn');
+    btnModoOscuro.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      btnModoOscuro.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>
+
+

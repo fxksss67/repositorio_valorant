@@ -348,10 +348,15 @@ iframe {
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
+/* Página individual de mapa */
 
+.map-detail h3 {
+  color: #ff4655;
+  margin-top: 15px;
+}
 
-#language-selector button:hover {
-  background-color: #ff6b7a;
+body.dark-mode .map-detail {
+  background-color: rgba(20, 20, 20, 0.85);
 }
 
 
@@ -398,3 +403,9 @@ iframe {
 body.dark-mode .map-card {
   background-color: #1b1b1b;
 }
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotus — Valorant Map | Info Hub</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1>Lotus</h1>
+    <button id="modo-oscuro-btn">🌙 Dark Mode</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="../mapas.html">🗺️ All Maps</a></li>
+    </ul>
+  </nav>
+
+  <main class="map-detail">
+    
+    <div class="map-images">
+      <div>
+        <h2>Full Map</h2>
+        <img src="assets/img/Mapas/Lotus/Loading_Screen_Lotus.webp" alt="Lotus Full Map">
+      </div>
+
+     <h3>A unique feature to Lotus is its rotating doorways. It has one on A Side standing between A Main and A Tree, and another on C Side standing between C Mound and B Main. The doors can be activated from either side using a toggle button, at which point the door will rotate 180° over 10 seconds, giving players a small window where they can pass through to the other side.</h3>
+    
+      <div>
+        <h2>Mini Map</h2>
+        <img src="assets/img/Mapas/Lotus/Lotus_minimap.webp" alt="Lotus Mini Map">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Valorant Info Hub — Fan-made site.</p>
+  </footer>
+
+  <script>
+    const btnModoOscuro = document.getElementById('modo-oscuro-btn');
+    btnModoOscuro.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      btnModoOscuro.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>

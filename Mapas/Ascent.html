@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ascent — Valorant Map | Info Hub</title>
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1>Ascent</h1>
+    <button id="modo-oscuro-btn">🌙 Dark Mode</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="../mapas.html">🗺️ All Maps</a></li>
+    </ul>
+  </nav>
+
+  <main class="map-detail">
+    
+    <div class="map-images">
+      <div>
+        <h2>Full Map</h2>
+        <img src="assets/img/Mapas/Ascent/Loading_Screen_Ascent.webp" alt="Ascent Full Map">
+      </div>
+
+     <h3>Ascent's features include mechanical doors leading into its spike sites. Each site has one door (A Link for A and Market for B) that is opened at the start of each round. Players can use a switch on the site side of the door (Next to the door on A and on a table in Toolshed on B) to close or open the door</h3>
+    
+      <div>
+        <h2>Mini Map</h2>
+        <img src="assets/img/Mapas/Ascent/Ascent_minimap.webp" alt="Ascent Mini Map">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Valorant Info Hub — Fan-made site.</p>
+  </footer>
+
+  <script>
+    const btnModoOscuro = document.getElementById('modo-oscuro-btn');
+    btnModoOscuro.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      btnModoOscuro.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+</body>
+</html>
