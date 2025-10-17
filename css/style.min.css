@@ -358,8 +358,6 @@ iframe {
   margin-left: 50;
 }
 
-
-
 /* Página individual de mapa */
 
 .map-detail h3 {
@@ -382,8 +380,9 @@ body.dark-mode .map-detail {
 
 .map-card {
   display: flex;
-  flex-direction: row;  
+  flex-direction: column;  
   align-items: center;
+  text-align: center;
   background-color: #2c2c2c;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -402,6 +401,8 @@ body.dark-mode .map-detail {
   width: 40%;
   height: auto;
   object-fit: cover;
+  display: block;
+  margin: 0;
 }
 
 .map-info {
