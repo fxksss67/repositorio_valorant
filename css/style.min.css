@@ -59,6 +59,36 @@ body::after {
   transition: opacity 1s ease-in-out;
 }
 
+
+/*BOTON TRADUCCION */
+
+.button-traducction {
+  background-color: #000000; /* color de fondo azul */
+  color: #fff;              /* texto blanco */
+  border: none;             /* sin borde */
+  border-radius: 0x;       /* esquinas redondeadas */
+  padding: 5px 10px;       /* tamaño del botón */
+  font-size: 26x;           /* tamaño del texto */
+  font-weight: 600;          /* negrita ligera */
+  cursor: pointer;           /* cambia el cursor al pasar */
+  transition: all 0.3s ease; /* transición suave para hover */
+}
+
+.button-traduction:hover {
+  background-color: #0f7ae5; /* color un poco más oscuro al pasar */
+  transform: translateY(-2px); /* efecto de levantamiento */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* sombra al pasar */
+}
+
+.button-traduction:active {
+  transform: translateY(0);  /* vuelve al estado original al presionar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
 /* ----------------------------- */
 /* Botón modo oscuro              */
 /* ----------------------------- */
